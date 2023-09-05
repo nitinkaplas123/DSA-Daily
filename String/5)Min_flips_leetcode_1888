@@ -1,0 +1,123 @@
+youtube link
+https://www.youtube.com/watch?v=MOeuK6gaC2A
+
+using sliding window 
+
+s="1100"
+we have to make either 1010 or 0101
+for that 
+we make s1 and s2 as our required output and return the mini
+
+In problem there is a case 1-:
+Remove the character at the start of the string s and append it to the end of the string.
+
+which means 
+there are n string 
+1)"1100"
+2)"1001"
+3)"0011"
+4)"0110"
+
+and each string have to compare with s1 and s2 which we required
+
+Solution 1 (Time complexity ->(O(n2)))
+Steps-:
+1)Make the previous logic in helper function (min no. of flips in GFG)
+2)Then we make n strings and call the function to return min(ans,helper())
+
+
+code-:
+class Solution {
+public:
+    int helper(string s)
+    {
+        int c1=0;
+        int c2=0;
+        for(int i=0;i<s.size();i++)
+        {
+         if(i%2==0)
+         {
+            if(s[i]!='0')
+            c1++;
+            else
+            c2++;
+         }
+         else
+         {
+            if(s[i]!='1')
+            c1++;
+            else
+            c2++;
+         }
+       }
+       return min(c1,c2);
+    }
+
+    int minFlips(string s) {
+      int ans=INT_MAX;
+      for(int i=0;i<s.size();i++)
+      {
+         char ch=s[0];
+         s.erase(s.begin());
+         s+=ch;
+         ans=min(ans,helper(s));
+      }
+     
+      return ans;
+    }
+
+
+
+Solution 2-: Time -(O(N))   Space ->O(N)
+
+eg 1100
+Using sliding window 
+n=s.size()
+1)Make s =s+s      11001100
+2)Make s1+=s1      10101010
+3)Make s2+=s2      01010101
+
+4) Now we compare from starting and increment the value if s[i]!=s1[i] c1++ if(s[i]!=s2[i]) c2++
+5) If we at n-1 position which means we reach at 1st string store the ans
+5) If we are at n position then decrement from starting if they are not match.
+6) Return ans
+
+
+Code-:
+ int minFlips(string s) {
+        int n=s.size();
+        s+=s;
+        string s1,s2;
+        for(int i=0;i<s.size();i++)
+        {
+          s1+=i%2?'0':'1';
+          s2+=i%2?'1':'0';
+        }
+        
+        int c1=0,c2=0;
+        int ans=INT_MAX;
+        for(int i=0;i<s.size();i++)
+        {
+            //normal adding 
+            if(s[i]!=s1[i]) c1++;
+            if(s[i]!=s2[i]) c2++;
+
+            // here when we at starting of duplicate value
+            // here we have to remove from starting if
+            //they are matching
+            if(i>=n)
+            {
+                c1=c1-(s[i-n]!=s1[i-n]);
+                c2=c2-(s[i-n]!=s2[i-n]);
+            }
+            
+            //here we reach at n charcter 
+            if(i>=n-1)
+            ans=min(ans,min(c1,c2));
+        }
+        return ans;
+    }
+
+
+
+
