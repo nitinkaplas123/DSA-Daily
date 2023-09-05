@@ -70,6 +70,8 @@ public:
 
 Solution 2-: Time -(O(N))   Space ->O(N)
 
+
+Diagram in Notebook 1 page 24
 eg 1100
 Using sliding window 
 n=s.size()
