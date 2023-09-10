@@ -70,6 +70,7 @@ string reverseWords(string s) {
           reverse(str.begin(),str.end());
           ans+=str;
         }
+        
         int len=ans.length()-1;
         int i=0;
         while(ans[len-i]==' ')
