@@ -1,6 +1,6 @@
 s="God Ding"
 
-1) res="" ans=""
+1) Res="" ans=""
 2) reverse the given string  s="gind dog"
 3) store the string upto gap in it (res=gind)
 4) when we see gap (ans=res+' '+ans)  ans=gind and res=" ";
