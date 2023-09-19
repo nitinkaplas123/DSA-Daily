@@ -40,7 +40,7 @@ string reverseWords(string s) {
 
 Solution -2
 Steps-:
-1)Using idea first reverse string words like ( hello kaplas)=> (olleh  salpak)
+1) Using idea first reverse string words like ( hello kaplas)=> (olleh  salpak)
 2) Then reverse whole string (olleh  salpak)  => (kaplas hello)
 3) If we have extra gap then remove by iterating from end of string and using substr
    we can extract it.
