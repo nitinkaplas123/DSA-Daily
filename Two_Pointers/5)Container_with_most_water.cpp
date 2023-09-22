@@ -7,7 +7,7 @@ Steps-:
   vice versa
 
 Code-: Time->O(N)   Space->O(1)
-nt maxArea(vector<int>& height) {
+int maxArea(vector<int>& height) {
         int n=height.size();
         int ans=0;
         
