@@ -49,3 +49,24 @@ bool isAnagram(string s, string t) {
         }
         return true;
     }
+
+
+Js Code-:
+var isAnagram = function(s, t) {
+        let n1=s.length;
+        let n2=t.length;
+        if(n1!=n2) return false;
+        
+        let count=new Array(26).fill(0)
+        
+        for(let i=0;i<n1;i++) count[s.charCodeAt(i)-'a'.charCodeAt(0)]++;
+
+        for(let i=0;i<n1;i++) count[t.charCodeAt(i)-'a'.charCodeAt(0)]--;
+
+        for(let i=0;i<26;i++)
+        {
+            if(count[i]!=0)
+            return false;
+        }
+        return true;
+};
