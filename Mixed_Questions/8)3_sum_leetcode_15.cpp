@@ -44,3 +44,54 @@ vector<vector<int>> threeSum(vector<int>& nums) {
         }
         return ans;
     }
+
+
+
+Solution 2 -:
+Steps-:
+1)Sort the array 
+2)Now run 2 for loop to fix i and j and then low=j+1 and high=n-1 
+3)using this we check if sum==target
+4)Then store into set of vector for unique combination.
+
+
+Code-: Time->O(N3)  Space =>O(N)
+
+vector<vector<int>> fourSum(vector<int>& nums, int target) {
+       vector<vector<int>>ans;
+       set<vector<int>>s;
+       int n=nums.size();
+       
+       sort(nums.begin(),nums.end());
+       for(int i=0;i<n-3;i++)
+       {
+           for(int j=i+1;j<n-2;j++)
+           {
+              long long int val=target-nums[i];
+              val=val-nums[j];
+              int low=j+1;
+              int high=n-1;
+
+              while(low<high)
+              {
+                  int sum=nums[low]+nums[high];
+                  if(sum==val)
+                  {
+                      s.insert({nums[i],nums[j],nums[low],nums[high]});
+                      low++;
+                      high--;
+                  }
+                  else if(sum<val)
+                  low++;
+                  else
+                  high--;
+              }
+           }
+       }
+
+       for(auto x:s)
+       {
+           ans.push_back(x);
+       }
+       return ans;
+    }
