@@ -1,3 +1,6 @@
+Reference-> Notebook N0. 10 Page->73
+
+
 Solution 1-:
 Steps-:
 1)Here we have to sort the array 
