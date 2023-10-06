@@ -38,6 +38,7 @@ eg. [10,20,30]
 1)Just add temp node in next of head
   [10,5,20,30]
 2)Now just swap the values of head with head->next
+  [5,10,20,30]
 
 
 Code-: Time->O(1)
