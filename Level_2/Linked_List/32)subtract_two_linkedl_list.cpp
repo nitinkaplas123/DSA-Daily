@@ -1,4 +1,4 @@
-Test case-:
+Test cases-:
 1)when starting with 0s
 l1-> 0->1->2->3
 l2-> 0->1
