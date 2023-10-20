@@ -84,3 +84,64 @@ int firstMissingPositive(vector<int>& nums) {
 
 
 
+Js-
+Code-:
+1)
+var firstMissingPositive = function(nums) {
+    nums.sort(function(a,b){return a-b});
+
+    let ans=1;
+    for(let i of nums)
+    {
+        if(ans==i)
+        ans++;
+    }
+    return ans;
+};
+
+
+
+2)
+var firstMissingPositive = function(nums) {
+    let s=new Set()
+    for(let i of nums)
+    {
+        s.add(i);
+    }
+
+    let ans=1
+    for(let i=0;i<nums.length;i++)
+    {
+        if(s.has(ans))
+        ans++;
+        else
+        return ans;
+    }
+    return ans;
+};
+
+
+
+3)
+var firstMissingPositive = function(nums) {
+       let n=nums.length;
+       for(let i=0;i<n;i++)
+       {
+           if(nums[i]<=0)
+           nums[i]=n+1;
+       }
+
+       for(let i=0;i<n;i++)
+       {
+           let index=Math.abs(nums[i])-1;
+           if(index<n &&  nums[index]>0)
+           nums[index]=-nums[index];
+       }
+
+       for(let i=0;i<n;i++)
+       {
+           if(nums[i]>0)
+           return i+1;
+       }
+       return n+1;
+};

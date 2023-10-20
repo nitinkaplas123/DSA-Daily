@@ -21,7 +21,6 @@ vector<vector<string>> groupAnagrams(vector<string>& strs) {
         }
 
         vector<vector<string>>ans;
-        vector<string>v;
         for(auto x:m)
         {
             ans.push_back(x.second);

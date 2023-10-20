@@ -5,7 +5,7 @@ Make a map (sum,index)  using m.insert({sum,index})
 
 
 Code-:
- int maxLen(vector<int>&A, int n)
+int maxLen(vector<int>&A, int n)
     {   
       unordered_map<int,int>m;
       m.insert({0,-1});
@@ -14,11 +14,11 @@ Code-:
       int ans=0;
       for(int i=0;i<n;i++)
       {
-         sum+=A[i];
-         if(m.find(sum)!=m.end())
-         ans=max(ans,i-m[sum]);
-         else
-         m.insert({sum,i});
+          sum+=A[i];
+          if(m.find(sum)!=m.end())
+          ans=max(ans,i-m[sum]);
+          
+          m.insert({sum,i});
       }
       return ans;
     }

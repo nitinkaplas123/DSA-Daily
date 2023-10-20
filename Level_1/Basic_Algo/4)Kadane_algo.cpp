@@ -1,4 +1,5 @@
-Solution -1
+Solution 1-:
+
 Steps-:
 1)Simply making each subarray and store max result in it.
 
@@ -18,7 +19,10 @@ int maxSubArray(vector<int>& nums) {
         return ans;
 }
 
-Solution -2:
+Solution 2-:
+Steps-:
+1)By storing 
+Solution -3:
 
 Steps-:
 1)max(Starting from new index or new index + previous prefix sum)

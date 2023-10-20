@@ -30,3 +30,32 @@ void sortColors(vector<int>& nums) {
             }
         }
     }
+
+
+
+Solution 2-:
+Steps-:
+1)Using lomuto partition
+
+Code-:
+ void sortColors(vector<int>& nums) {
+       int n=nums.size();
+       int i=-1;
+       for(int j=0;j<n;j++)
+       {
+           if(nums[j]==0)
+           {
+              i++;
+              swap(nums[i],nums[j]);
+           }
+       }
+       int index=i;
+       for(int j=index+1;j<n;j++)
+       {
+           if(nums[j]==1)
+           {
+               i++;
+               swap(nums[i],nums[j]);
+           }
+       }
+    }

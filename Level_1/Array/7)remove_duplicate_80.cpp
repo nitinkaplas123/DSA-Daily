@@ -18,9 +18,8 @@ int removeDuplicates(vector<int>& nums) {
             }
             else if(nums[i]!=nums[i-1])
             {
-               count=0;
+               count=1;
                v.push_back(nums[i]);
-               count++;
             }
             else
             continue;
@@ -41,7 +40,7 @@ Steps-:
 
 
 Code-:Time->O(N) Space ->O(1)
-nt removeDuplicates(vector<int>& nums) {
+int removeDuplicates(vector<int>& nums) {
         int n=nums.size();
         int count=1;
         int low=0;
