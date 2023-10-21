@@ -41,3 +41,8 @@ ListNode* reverseList(ListNode* head)
         ListNode* prev=NULL;
         return helper(prev,curr);
 }
+
+
+Solution 3-: using recursion
+
+Steps-:

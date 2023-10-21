@@ -27,7 +27,8 @@ Steps-:
 
 
 Code-:
-int mySqrt(int x) {
+int mySqrt(int x) 
+{
       int low=0;
       int high=x;
       int ans=-1;
@@ -45,4 +46,4 @@ int mySqrt(int x) {
           }
       }
       return ans;
-    }
+ }

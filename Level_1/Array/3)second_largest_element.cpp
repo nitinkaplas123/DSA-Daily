@@ -16,7 +16,7 @@
 
 // Solution -2
 // Steps-:
-// 1)Make the first and second varibale as -1 
+// 1) Make the first and second varibale as -1 
 // 2) if arr[i]>first then update the second as first and first as arr[i]
 // 3) if arr[i]<first and arr[i]>second then update the second=arr[i]
 

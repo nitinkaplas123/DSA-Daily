@@ -17,10 +17,6 @@ char nonrepeatingCharacter(string S)
     }
 
 
-
-
-
-
 Js Code-:
 nonrepeatingCharacter(s)
 {
