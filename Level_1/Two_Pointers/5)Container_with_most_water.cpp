@@ -1,4 +1,25 @@
-Solution -1
+Solution 1-:
+Steps-:
+1)Make each possible two values using 2 loops
+
+Code-:
+long long maxArea(long long A[], int len)
+{
+    int ans=INT_MIN;
+    for(int i=0;i<len;i++)
+    {
+        for(int j=i+1;j<len;j++)
+        {
+            int index_diff=j-i;
+            int mini=min(A[i],A[j]);
+            ans=max(ans,index_diff*mini);
+        }
+    }
+    return ans;
+}
+
+
+Solution 2-:
 
 Steps-:
 1)Make using end points because we need max water for that we need max width.
@@ -7,26 +28,22 @@ Steps-:
   vice versa
 
 Code-: Time->O(N)   Space->O(1)
-int maxArea(vector<int>& height) {
-        int n=height.size();
-        int ans=0;
+long long maxArea(long long A[], int len)
+{
+    int ans=0;
+    int low=0;
+    int high=len-1;
+    while(low<high)
+    {
+        int index=high-low;
+        int mini=min(A[high],A[low]);
+        ans=max(ans,index*mini);
         
-        int lmax=INT_MIN;
-        int rmax=INT_MIN;
-        int low=0;
-        int high=n-1;
-        while(low<=high)
-        {
-            lmax=max(lmax,height[low]);
-            rmax=max(rmax,height[high]);
-            int mini=min(lmax,rmax);
-            ans=max(ans,mini*(high-low));
-           
-            if(lmax<rmax)
-            low++;
-            else
-            high--;
-        }
-        return ans;
+        if(A[low]<A[high])
+        low++;
+        else
+        high--;
     }
+    return ans;
+}
 
