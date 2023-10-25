@@ -1,29 +1,23 @@
 Steps-:
-1)sort the array and using hashset for adding unique elements in set.
+1)sort the array and if nums[i-1]>=nums[i] then ans++;
 
-Code-: Time->O(n2)   Space ->O(N)
+Code-: Time->O(n2)   Space ->O(1)
 
-int minIncrementForUnique(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
-        unordered_set<int>s;
-        int ans=0;
-        for(int i=0;i<nums.size();i++)
-        {
-            if(s.find(nums[i])==s.end())
-            s.insert(nums[i]);
-            else
-            {
-                while(s.find(nums[i])!=s.end())
-                {
-                    ans++;
-                    nums[i]++;
-                }
-                s.insert(nums[i]);
-            }
-        }
-        return ans;
-    }
-
+int minIncrementForUnique(vector<int>& nums) 
+{
+      sort(nums.begin(),nums.end());
+      int n=nums.size();
+      int ans=0;
+      for(int i=1;i<n;i++)
+      {
+         while(nums[i-1]>=nums[i])
+         {
+             ans++;
+             nums[i]+=1;
+         }
+      }
+      return ans;
+}
 
 
 
@@ -86,20 +80,19 @@ res= 6
 
 
 
-Code-:
+Code-: Time->O(NLog(N)) Space->O(1)
 int minIncrementForUnique(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
-       
-        int res=0;
-        int last=0;
-        for(int i=1;i<nums.size();i++)
-        {
-          if(nums[i]<=nums[i-1])
+      sort(nums.begin(),nums.end());
+      int n=nums.size();
+      int ans=0;
+      for(int i=1;i<n;i++)
+      {
+          if(nums[i-1]>=nums[i])
           {
-            res+=nums[i-1]-nums[i]+1;
-            nums[i]=nums[i-1]+1;
+              ans+=nums[i-1]-nums[i]+1;
+              nums[i]=nums[i-1]+1;
           }
-        }
-        return res;
+      }
+      return ans;
     }
 

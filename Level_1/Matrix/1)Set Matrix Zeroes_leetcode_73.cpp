@@ -1,6 +1,8 @@
 Reference -:
 https://www.youtube.com/watch?v=M65xBewcqcI
 
+Note->For 3rd solution referernce Notebook 1 page -31
+
 Solution 1 -:   
 Steps-:
 1) Make a pair of vectors where we store the pair in i and j format which having value 0 (matrix[i][j]=0)
@@ -89,13 +91,13 @@ STeps-:
 
 Code-:
 void setZeroes(vector<vector<int>>& matrix) {
-        vector<pair<int,int>>v;
+        
         int n=matrix.size();
         int m=matrix[0].size();
         bool col=true;
         for(int i=0;i<n;i++)
         {
-             if(matrix[i][0]==0)
+                if(matrix[i][0]==0)
                 {
                    col=false;
                 }
