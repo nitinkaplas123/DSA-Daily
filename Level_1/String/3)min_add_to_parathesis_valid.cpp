@@ -57,7 +57,7 @@ nt minAddToMakeValid(string s) {
             c--;
             if(c<0)
             {
-               ans+=abs(c);
+               ans++;
                c=0;
             }
           }
