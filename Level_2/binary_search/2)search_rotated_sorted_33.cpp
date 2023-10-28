@@ -36,8 +36,10 @@ Steps-:
     
 
 Code-: Time->O(logn)
-int search(vector<int>& nums, int target) {
+
+ int search(vector<int>& nums, int target) {
         int n=nums.size();
+       
         int low=0;
         int high=n-1;
         while(low<=high)
@@ -45,19 +47,19 @@ int search(vector<int>& nums, int target) {
             int mid=(low+high)/2;
             if(nums[mid]==target)
             return mid;
-            else if(nums[mid]>=nums[low])
+            else if(nums[low]<=nums[mid])
             {
-                if(target>=nums[low] and nums[mid]>=target)
-                high=mid-1;
+                if(target>=nums[low] and target<=nums[mid])
+                high=mid;
                 else
                 low=mid+1;
             }
             else
             {
-               if(nums[mid]<=target and nums[high]>=target)
-               low=mid+1;
-               else
-               high=mid-1;
+                if(target>=nums[mid+1] and target<=nums[high])
+                low=mid+1;
+                else
+                high=mid;
             }
         }
         return -1;
