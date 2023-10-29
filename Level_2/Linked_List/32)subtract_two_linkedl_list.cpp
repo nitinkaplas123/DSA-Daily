@@ -1,3 +1,22 @@
+7
+5 0 3 7 3 6 2
+6
+0 6 3 5 1 5
+Dry run this 
+
+This upward case is for 
+curr1->data is negative
+Code-:
+if(curr1->data<0)
+{
+    curr1->data+=10;
+    diff=curr1->data;
+    carry=1;
+    curr1=curr1->next;
+}
+
+
+
 Test cases-:
 1)when starting with 0s
 l1-> 0->1->2->3
