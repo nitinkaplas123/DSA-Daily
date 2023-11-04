@@ -1,5 +1,6 @@
-Solution 1-:
+Reference->https://www.youtube.com/watch?v=HcJ3taLC-Ys
 
+Solution 1-:
 Steps-:
 1)Here b is our carry  (using & opeartor)
   at every step if we have encounter with 2 1s then we have a carry at next step.
