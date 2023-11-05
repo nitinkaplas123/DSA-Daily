@@ -62,7 +62,7 @@ Steps-:
 
 
 
-Code-:
+Code-: Time->O(N)
 bool check(vector<int>& nums) 
 {
         int n=nums.size();

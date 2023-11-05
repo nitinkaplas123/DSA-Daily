@@ -56,9 +56,10 @@ Steps-:
 3)Else we increment the count till we  find the nums[i]+1 element in set.
 
 Code-: Time->O(N)  Space ->O(n)
-int longestConsecutive(vector<int>& nums) {
+nt longestConsecutive(vector<int>& nums) {
         int n=nums.size();
         if(n==0) return 0;
+        
         unordered_set<int>s;
         for(int i=0;i<n;i++)
         {
@@ -66,23 +67,24 @@ int longestConsecutive(vector<int>& nums) {
         }
 
         int count=1;
-        int res=1;
+        int ans=0;
         for(int i=0;i<n;i++)
         {
             if(s.find(nums[i]-1)!=s.end())
             continue;
-            else
+            else 
             {
-               count=1;
-               while(s.find(nums[i]+1)!=s.end())
-               {
-                   count++;
-                   nums[i]+=1;
-               }
+                int count=1;
+                while(s.find(nums[i]+1)!=s.end())
+                {
+                    count++;
+                    nums[i]+=1;
+                }
+                ans=max(ans,count);
+                count=1;
             }
-            res=max(res,count);
         }
-        return res;
+        return max(ans,count);
     }
 
 

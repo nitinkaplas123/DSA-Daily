@@ -1,0 +1,20 @@
+Solution 1-:
+Steps-:
+1)Using 2 loops
+
+Code-: Time->O(N)
+int Solution::solve(vector<int> &A, int B) {
+    int n1=A.size();
+    int count=0;
+    for(int i=0;i<n1;i++)
+    {
+        int sum=0;
+        for(int j=i;j<n1;j++)
+        {
+            sum=sum^A[j];
+            if(sum==B)
+            count++;
+        }
+    }
+    return count;
+}
