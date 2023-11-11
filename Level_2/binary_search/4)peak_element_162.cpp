@@ -7,25 +7,16 @@ Steps-:
 2) rest cases we checked using for loop
 
 Code-: Time->O(N)
-int findPeakElement(vector<int>& nums)
-{
-        int n=nums.size();
-        if(n==1) return 0;
-        if(n>1)
-        {
-           if(nums[0]>nums[1])
-           return 0;
-           if(nums[n-1]>nums[n-2])
-           return n-1;
-        }
-       
-        for(int i=1;i<n-1;i++)
-        {
-            if(nums[i]>nums[i-1] and nums[i]>nums[i+1])
-            return i;
-        }
-        return -1;
-}
+int findPeakElement(vector<int>& nums) {
+       int n=nums.size();
+       if(n==1) return 0;
+       for(int i=0;i<n;i++)
+       {
+           if((i==0 || nums[i]>nums[i-1]) and (i==n-1 || nums[i]>nums[i+1]))
+           return i;
+       }
+       return -1;
+    }
 
 
 Solution 2-: Using binary search
@@ -41,6 +32,9 @@ Steps-:
      which means left side we have peak element
   3. else  mid<n-1  and nums[mid]<nums[mid+1]
      means right side we have peak element
+
+Note -:
+nums[i]!=nums[i+1]
 
 Code-: Time->O(logN)  
 int findPeakElement(vector<int>& nums)
