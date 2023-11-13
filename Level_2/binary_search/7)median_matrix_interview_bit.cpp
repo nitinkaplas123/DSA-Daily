@@ -36,14 +36,14 @@ Steps-:
   [2,6,9]
   [3,6,9]
 
-  [1,2,2,3,3,5,6,6,9,9]  here 3 is the median, 4 elements are on left side and 4 elements are on right side.
+  [1,2,3,3,5,6,6,9,9]  here 5 is the median, 4 elements are on left side and 4 elements are on right side.
                          middle element is our median.
 
 2) Desired ->(r*c+1)/2   so here is 5
 3) Now here we have to apply the binary search where have to find -:
    low ->from first col 
    high-> from last col.
-4)Now (low<high)  low=1   high=9
+4) Now (low<high)  low=1   high=9
 5) here we have to first find mid->low+high/2
    mid=5
 6)Now count the elements in matrix which is less than and equal to 5 using upper_bound.
@@ -60,38 +60,48 @@ o/p ->return low or return high.
 Code-:  Time-> (32*r*logc)
         where 32 is the max iteration of low<high
         where 
-int helper(vector<vector<int>>&A,int mid,int r,int c)
+
+
+int helper(vector<vector<int>>&A,int target)
 {
+    int n=A.size();
+    int m=A[0].size();
     int count=0;
-    for(int i=0;i<r;i++)     o(r)
+    for(int i=0;i<n;i++)
     {
-        count+=upper_bound(A[i].begin(),A[i].end(),mid)-A[i].begin();  o(log(c))
+        count+=upper_bound(A[i].begin(),A[i].end(),target)-A[i].begin();
     }
     return count;
 }
 int Solution::findMedian(vector<vector<int> > &A) {
-    int r=A.size();
-    int c=A[0].size();
-    
-    int low=INT_MAX;
-    int high=INT_MIN;
-    
-    for(int i=0;i<r;i++)
+    int n=A.size();
+    int m=A[0].size();
+    int mini=INT_MAX;
+    int maxi=INT_MIN;
+    for(int i=0;i<n;i++)
     {
-        low=min(low,A[i][0]);
-        high=max(high,A[i][c-1]);
+        mini=min(mini,A[i][0]);
+        maxi=max(maxi,A[i][m-1]);
     }
     
-    int desired=(r*c+1)/2;
-    while(low<high)      o(32)      if its of 32 bit.
+    int low=mini;
+    int high=maxi;
+    
+    int desired=((n*m)+1)/2;
+    int ans=-1;
+    
+    while(low<=high)
     {
         int mid=(low+high)/2;
-        int count=helper(A,mid,r,c);
+        int val=helper(A,mid);
         
-        if(count>=desired)
-        high=mid;
-        else
+        if(val<desired)
         low=mid+1;
+        else
+        {
+            ans=mid;
+            high=mid-1;
+        }
     }
-    return high;
+    return ans;
 }
