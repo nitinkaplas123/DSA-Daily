@@ -23,3 +23,12 @@ int countPrimes(int n) {
         }
         return count;
     }
+
+
+
+
+Solution 2-:
+Code-:
+
+sieve of erathosis 
+

@@ -37,6 +37,26 @@ vector<int>AllPrimeFactors(int N)
 }
 
 
+Solution 2-:
+Code-:
+vector<int>AllPrimeFactors(int N) {
+	    vector<int>v;
+	    int i=2;
+	    while(N!=1)
+	    {
+	        if(N%i==0)
+	        v.push_back(i);
+	        
+	        while(N%i==0)
+	        {
+	            N=N/i;
+	        }
+	        i++;
+	    }
+	    return v;
+	}
+
+
 
 Solution 2-:
 Code-:
@@ -52,8 +72,10 @@ vector<int>AllPrimeFactors(int N) {
            N=N/i;
           }
         }
+
 	    if(N>1)
 	    s.insert(N);
+		
 	    for(auto x:s)
 	    {
 	        v.push_back(x);

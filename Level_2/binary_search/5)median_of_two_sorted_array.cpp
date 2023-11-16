@@ -75,6 +75,9 @@ Steps-:
      which means we have to go left side
      so high=i1-1
 
+Run this test case why high=n1 not  n1-1;
+Input: nums1 = [1,2], nums2 = [3,4]
+Output: 2.50000
 
 Code-:
 double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
