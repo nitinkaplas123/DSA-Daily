@@ -1,7 +1,12 @@
+Dry run -:
+[5,1,2,3,4]
+
 SOlution 1-:
 Steps-:
 1)low=0 high=n-1;
 [3,4,5,1,2]
+
+
 
 2)Two cases-:
   1. if left half is sorted 
