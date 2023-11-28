@@ -24,21 +24,20 @@ Steps-:
 
 Code-: Time->O(N) Space->O(N)
 int lenOfLongSubarr(int A[],  int N, int K) 
-{ 
-       unordered_map<int,int>m;
-       int pre_sum=0;
-       int ans=0;
-       for(int i=0;i<N;i++)
-       {
-          pre_sum+=A[i];
-          if(pre_sum==K)
-          ans=max(ans,i+1);
-          if(m.find(pre_sum-K)!=m.end())
-          ans=max(ans,i-m[pre_sum-K]);
-          m.insert({pre_sum,i});
-       }
-       return ans;
-}
+    { 
+        unordered_map<int,int>m;
+        m[0]=-1;
+        int ans=0;
+        int sum=0;
+        for(int i=0;i<N;i++)
+        {
+            sum+=A[i];
+            if(m.find(sum-K)!=m.end())
+            ans=max(ans,i-m[sum-K]);
+            m.insert({sum,i});
+        }
+        return ans;
+    } 
 
 
 
