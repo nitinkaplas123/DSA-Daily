@@ -24,3 +24,60 @@ vector<int> pattern(int N){
        }
        return v;
     }
+
+
+
+Solution 2-:
+Steps-:
+1)Using recusrion.
+2)here we calling 2 function for printing.
+
+Code-:
+void helper1(int N,vector<int>&v,int val)
+    {
+        v.push_back(N);
+        
+        if(N<=0)
+        return ;
+        
+        helper1(N-5,v,val);
+    }
+    
+    void helper2(int N,vector<int>&v,int val)
+    {
+        v.push_back(N);
+        
+        if(N==val) return ;
+        
+        helper2(N+5,v,val);
+    }
+    
+    vector<int> pattern(int N){
+       vector<int>v;
+       int val=N;
+       v.push_back(N);
+       if(N<=0) return v;
+       helper1(N-5,v,val);
+       helper2(v.back()+5,v,val);
+       return v;
+    }
+
+
+
+Solution 3-:
+Steps-:
+1)Using recursion single function 
+
+Code-: Time->O(N)
+ void helper(int N,vector<int>&v)
+    {
+        v.push_back(N);
+        if(N<=0) return ;
+        helper(N-5,v);
+        v.push_back(N);
+    }
+    vector<int> pattern(int N){
+        vector<int>v;
+        helper(N,v);
+        return v;
+    }
