@@ -24,7 +24,7 @@ Steps-:
 
 Code-: Time->O(N) Space->O(N)
 int lenOfLongSubarr(int A[],  int N, int K) 
-    { 
+{ 
         unordered_map<int,int>m;
         m[0]=-1;
         int ans=0;
@@ -37,7 +37,7 @@ int lenOfLongSubarr(int A[],  int N, int K)
             m.insert({sum,i});
         }
         return ans;
-    } 
+} 
 
 
 

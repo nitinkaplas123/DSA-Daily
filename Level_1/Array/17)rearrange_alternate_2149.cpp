@@ -55,3 +55,27 @@ vector<int> rearrangeArray(vector<int>& nums) {
         }
         return ans;
     }
+
+
+
+In js-:
+var rearrangeArray = function(nums) {
+    let arr=[];
+    let n=nums.length;
+    let even=0;
+    let odd=1;
+    for(let i=0;i<n;i++)
+    {
+        if(nums[i]>=0)
+        {
+            arr[even]=(nums[i]);
+            even+=2;
+        }
+        else
+        {
+            arr[odd]=(nums[i]);
+            odd+=2;
+        }
+    }
+    return arr;
+};
