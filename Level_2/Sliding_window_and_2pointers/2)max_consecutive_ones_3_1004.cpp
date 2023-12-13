@@ -11,7 +11,7 @@ Steps-:
         3rd low++
 
 
-Code-: Time->O(N)
+Code-: Time->O(2*N)
 int longestOnes(vector<int>& nums, int k) {
         int n=nums.size();
         int low=0;
