@@ -28,7 +28,6 @@ int totalFruit(vector<int>& fruits) {
             }
             
             ans=max(ans,high-low+1);
-            cout<<ans<<endl;
             high++;
         }
         return ans;
