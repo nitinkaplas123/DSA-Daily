@@ -26,23 +26,20 @@ Steps-:
 2)Intially we make ans=1 if abs(left-right)>1  ans=0;
 
 Code-:
-int helper(TreeNode* root,int &flag)
+int helper(TreeNode* root,int &res)
 {
         if(root==NULL) return 0;
-        if(root->left==NULL and root->right==NULL) return 1;
-        
-        int left=helper(root->left,flag);
-        int right=helper(root->right,flag);
+        int left=helper(root->left,res);
+        int right=helper(root->right,res);
 
-        if(abs(left-right)>1) 
-        flag=0;
+        if(abs(left-right)>1)
+        res=0;
         
         return 1+max(left,right);
 }
 
-bool isBalanced(TreeNode* root) 
-{
-        int flag=1;
-        helper(root,flag);
-        return flag;
+bool isBalanced(TreeNode* root) {
+       int res=1;
+       helper(root,res);
+       return res;
 }
