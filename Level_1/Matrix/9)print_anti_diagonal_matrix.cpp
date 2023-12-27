@@ -61,3 +61,58 @@ vector<int> antiDiagonalPattern(vector<vector<int>> matrix)
        }
        return ans;
 }
+
+
+
+
+Solution 2-:
+Steps-:
+1)Firstly we traverse from row =0 to row=n-1 
+2)upto here half is printed 
+
+matrix[][] = 3 2 3
+             4 5 1
+             7 8 9
+
+             {{3},{2,4},{3,5,7}}
+
+
+3) Now we have to print {1,8} {9}
+   So go 
+   for(int row=1;row<n;row++)
+   
+   For column 
+   just see the pattern 
+
+Code-: Time->O(N*N) Space->O(1)
+vector<int> antiDiagonalPattern(vector<vector<int>> matrix) 
+    {
+       int n=matrix.size();
+       vector<int>ans;
+       
+       for(int i=0;i<n;i++)
+       {
+           int col=i;
+           int row=0;
+           while(col>=0 and row<n)
+           {
+               ans.push_back(matrix[row][col]);
+               row++;
+               col--;
+           }
+       }
+       
+       for(int row=1;row<n;row++)
+       {
+           int col=n-1;
+           int r=row;
+           while(r<n and col>=0)
+           {
+               ans.push_back(matrix[r][col]);
+               r++;
+               col--;
+           }
+       }
+       return ans;
+    }
+
