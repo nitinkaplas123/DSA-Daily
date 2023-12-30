@@ -30,3 +30,36 @@ static bool comp(pair<string,int>&a,pair<string,int>&b)
         sort(v.begin(),v.end(),comp);
         return {v[0].first,to_string(v[0].second)};
     }
+
+
+
+Solution 2-:
+Steps-:
+1)Just compare with count and str.
+
+
+Code-: Time->O(N) Space->O(N)
+vector<string> winner(string arr[],int n)
+    {
+       unordered_map<string,int>m;
+       for(int i=0;i<n;i++)
+       {
+           m[arr[i]]++;
+       }
+       
+       int count=0;
+       string str;
+       for(auto x:m)
+       {
+           if(x.second>count)
+           {
+               count=x.second;
+               str=x.first;
+           }
+           else if(count==x.second and str.compare(x.first)>0)
+           str=x.first;
+           else
+           continue;
+       }
+       return {str,to_string(count)};
+    }
