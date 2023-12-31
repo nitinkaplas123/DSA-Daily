@@ -40,7 +40,7 @@ Steps-:
 
 Code-: Time->O(N) Space->O(N)
 vector<string> winner(string arr[],int n)
-    {
+{
        unordered_map<string,int>m;
        for(int i=0;i<n;i++)
        {
@@ -62,4 +62,4 @@ vector<string> winner(string arr[],int n)
            continue;
        }
        return {str,to_string(count)};
-    }
+}
