@@ -39,3 +39,26 @@ bool containsDuplicate(vector<int>& nums) {
         }
         return false;
     }
+
+
+
+
+Solution 4-:
+Steps-:
+1)Using hashset 
+2)her we add all the elements in hashset.
+3)now if the size of set == n which means there is no duplicate if not equal then it means 
+  there is duplicate in array.
+
+
+
+Code-: Time->O(N) Space->O(N)
+bool containsDuplicate(vector<int>& nums) {
+        int n=nums.size();
+        unordered_set<int>s;
+        for(int i=0;i<n;i++)
+        {
+            s.insert(nums[i]);
+        }
+        return (n!=s.size());
+}
