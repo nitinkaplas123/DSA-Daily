@@ -20,14 +20,12 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
                 curr1=curr1->next;
              }
              
-
              if(curr2!=NULL)
              {
                 sum+=curr2->val;
                 curr2=curr2->next;
              }
-             
-             
+
              sum+=carry;
 
              ListNode* temp=new ListNode(sum%10);
