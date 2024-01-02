@@ -7,7 +7,7 @@ Steps-:
 
 Code-: Time->O(N^2) Space->O(1)
 long long int maxSumWithK(long long int a[], long long int n, long long int k) 
-    {
+{
         int ans=INT_MIN;
         for(int i=0;i<n;i++)
         {
@@ -20,4 +20,4 @@ long long int maxSumWithK(long long int a[], long long int n, long long int k)
             }
         }
         return ans;
-    }
+}
