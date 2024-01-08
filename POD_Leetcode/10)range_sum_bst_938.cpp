@@ -27,3 +27,29 @@ int rangeSumBST(TreeNode* root, int low, int high) {
         }
         return sum;
 }
+
+
+
+Solution 2-:
+Steps-:
+1)without storing into vector.
+2)The idea is same as aboved.
+
+Code-:
+void helper(TreeNode* root,int low,int high,int &sum)
+{
+        if(root==NULL) return ;
+
+        helper(root->left,low,high,sum);
+
+        if(root->val>=low and root->val<=high)
+        sum+=root->val;
+        helper(root->right,low,high,sum);
+}
+
+int rangeSumBST(TreeNode* root, int low, int high) {
+       int sum=0;
+       helper(root,low,high,sum);
+       return sum;
+}
+
