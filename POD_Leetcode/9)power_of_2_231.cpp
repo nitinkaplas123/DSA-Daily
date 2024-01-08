@@ -9,7 +9,7 @@ Steps-:
 4)Now return (pow(2,x)==n)
 
 
-Code-:
+Code-: Time->O(log(N))
 bool isPowerOfTwo(int n) {
        if(n<=0) return 0;
        int x=(log(n)/log(2));
@@ -26,7 +26,7 @@ Steps-:
 1)if n%2!=0 return false 
 2)else n=n/2 if we get n==1 return true;
 
-Code-:
+Code-: Time->O(log(N))
 bool isPowerOfTwo(int n) {
        if(n<=0) return 0;
        while(n!=1)
