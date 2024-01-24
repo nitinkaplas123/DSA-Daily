@@ -47,7 +47,7 @@ double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
         ans=(v[(n1+n2)/2]);
 
         return ans; 
-    }
+}
 
 
 Solution 2-:
