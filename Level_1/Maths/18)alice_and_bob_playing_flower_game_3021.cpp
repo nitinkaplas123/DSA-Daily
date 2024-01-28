@@ -38,3 +38,41 @@ long long flowerGame(int n, int m) {
         }
         return count;
 }
+
+
+Solution 2-:
+Steps-:
+1)Just count the -:
+  1. odd_num_n 
+  2. odd_num_m
+  3. even_num_n
+  4. even_num_m
+2)we observe from solution 1-> that when (i+j) pairs sum is odd then alice win.
+3)ans+= odd_num_n * even_num_m + odd_num_m * even_num_n.
+
+
+Code-: Time->O(1)
+long long odd(int num)
+{
+        if(num%2!=0)
+        return num/2+1;
+        else
+        return num/2;
+}
+
+long long even(int num)
+{
+       return num/2;
+}
+
+long long flowerGame(int n, int m) {
+        long long count=0;
+        long long odd_count_n=odd(n);
+        long long odd_count_m=odd(m);
+
+        long long even_count_n=even(n);
+        long long even_count_m=even(m);
+
+        long long ans=odd_count_n*even_count_m + odd_count_m*even_count_n;
+        return ans;
+}
