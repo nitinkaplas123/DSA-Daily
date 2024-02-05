@@ -7,35 +7,32 @@ Steps-:
 
 
 Code-: Time->O(V+E)
-bool dfs(vector<int>adj[],int &prev,vector<int>&visited,int src)
+bool dfs(vector<int>adj[],vector<int>&visited,int s,int &prev)
     {
-        visited[src]=true;
+        visited[s]=true;
         
-        for(auto x:adj[src])
+        for(auto x:adj[s])
         {
-            if(x!=prev and visited[x]==false)
+            if(visited[x]==false)
             {
-                if(dfs(adj,src,visited,x)==true)
+                if(dfs(adj,visited,x,s)==true)
                 return true;
             }
-            else if(x!=prev and visited[x]==true)
-            return 1;
+            else if(visited[x]==true and x!=prev)
+            return true;
             else
             continue;
         }
         return false;
     }
     bool isCycle(int V, vector<int> adj[]) {
-        int back=-1;
-        vector<int>visited(V,false);
-        for(int i=0;i<V;i++)
-        {
-            if(visited[i]==false)
-            {
-                 int res=dfs(adj,back,visited,i);
-                 if(res==1)
-                 return 1;
-            }
-        }
-        return 0;
+       vector<int>visited(V,false);
+       int prev=-1;
+       for(int i=0;i<V;i++)
+       {
+           if(visited[i]==false)
+           if(dfs(adj,visited,i,prev)==true)
+           return true;
+       }
+       return false;
     }
