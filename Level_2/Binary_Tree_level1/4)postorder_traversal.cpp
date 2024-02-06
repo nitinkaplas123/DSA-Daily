@@ -1,4 +1,4 @@
-Postorder->  left,root,right
+Postorder->  left,right,root
 
 Solution 1-:
 Using recursion

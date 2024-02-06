@@ -77,7 +77,7 @@ Steps-:
 
 Reference ->https://www.youtube.com/watch?v=drbtmYjZQHQ
 Code-:
- int removeDuplicates(vector<int>& nums) {
+int removeDuplicates(vector<int>& nums) {
        int n=nums.size();
        if(n<=2) return n;
        int index=2;

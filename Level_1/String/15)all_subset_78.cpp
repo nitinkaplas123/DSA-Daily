@@ -1,3 +1,5 @@
+Diagram -:
+Notebook 1 page 38
 Solution 1-:
 Steps-:
 1)using recusrion 

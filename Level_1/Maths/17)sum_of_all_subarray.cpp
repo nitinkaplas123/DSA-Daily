@@ -1,5 +1,6 @@
 question ->https://www.geeksforgeeks.org/problems/sum-of-subarrays2229/1
 
+Reference -> Notebook 1 Page No. ->47
 
 Solution 1-:
 Steps-:

@@ -1,3 +1,55 @@
+Solution 1-:
+Steps-:
+1)make a hashmap where we store the freq.
+2)now copy the value of map into pair of vector.
+3)sort the vector according to freq.
+4)now make use of hashset where we store the unique values if value is present in set 
+  ans++ and freq-=1;
+
+
+Code-:
+bool static comp(pair<int,int>&a,pair<int,int>&b)
+{
+        return (a.second<b.second);
+}
+
+int minDeletions(string s) {
+        int n=s.length();
+        unordered_map<int,int>m;
+
+        for(int i=0;i<n;i++)
+        {
+            m[s[i]]++;
+        }
+
+        vector<pair<int,int>>v;
+        for(auto x:m)
+        {
+            v.push_back({x.first,x.second});
+        }
+
+        sort(v.begin(),v.end(),comp);
+        
+        unordered_set<int>set;
+        int ans=0;
+        for(int i=0;i<v.size();i++)
+        {
+           int freq=v[i].second;
+
+           while(freq!=0 and set.find(freq)!=set.end())
+           {
+              ans++;
+              freq-=1;
+           }
+           set.insert(freq);
+        }
+        return ans;
+}
+
+
+Solution 2-:
+
+
 s = "aaabbbcc"
 
 Steps-:

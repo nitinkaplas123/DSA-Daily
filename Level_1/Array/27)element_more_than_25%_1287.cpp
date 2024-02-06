@@ -241,7 +241,8 @@ int right_side(vector<int>&arr,int val,int low,int high)
         return ans;
     }
 
-    int findSpecialInteger(vector<int>& arr) {
+    i
+nt findSpecialInteger(vector<int>& arr) {
        int n=arr.size();
        int freq=n/4;
        vector<int>v{n/4,n/2,(3*n)/4};

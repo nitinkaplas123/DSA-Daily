@@ -46,6 +46,7 @@ Node* divide(int N, Node *head)
             }
             curr=curr->next;
         }
+        
         if(even_head==NULL) 
         {
             odd->next=NULL;

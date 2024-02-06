@@ -57,7 +57,7 @@ Solution 3-:
 Steps-:
 1)Optimised approach
 
-Code-:
+Code-:  
  int helper(int a,int b)
     {
         if(b==0) return a;

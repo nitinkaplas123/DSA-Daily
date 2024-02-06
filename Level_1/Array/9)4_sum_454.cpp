@@ -91,3 +91,39 @@ int fourSumCount(vector<int>& nums1, vector<int>& nums2, vector<int>& nums3, vec
         return count;
     }
 };
+
+
+
+
+JS -solution 
+var fourSumCount = function(nums1, nums2, nums3, nums4) {
+    let count=0;
+    let n1=nums1.length;
+    let n2=nums2.length;
+    let n3=nums3.length;
+    let n4=nums4.length;
+
+    let m=new Map();
+    for(let i=0;i<n3;i++)
+    {
+       for(let j=0;j<n4;j++)
+       {
+           let sum=nums3[i]+nums4[j];
+           if(m.has(sum))
+           m.set(sum,m.get(sum)+1);
+           else
+           m.set(sum,1);
+       }
+    }
+
+    for(let i=0;i<n1;i++)
+    {
+        for(let j=0;j<n2;j++)
+        {
+           let sum=nums1[i]+nums2[j];
+           if(m.has(-sum))
+           count+=m.get(-sum);
+        }
+    }
+    return count;
+};

@@ -5,7 +5,7 @@ lcm*gcd=A*B.
 lcm=A*B/gcd.
 
 
-Code-:
+Code-:  O(Log(min(A,B)))
 long long int helper1(long long A,long long B)
 {
         if(B==0) return A;

@@ -56,7 +56,7 @@ Steps-:
 
 
 Code-: Time->O(N) Space->O(1)
- bool makeEqual(vector<string>& words) {
+bool makeEqual(vector<string>& words) {
         int n=words.size();
         
         int count[26]={0};
@@ -74,4 +74,4 @@ Code-: Time->O(N) Space->O(1)
             if(count[i]%n!=0) return false;
         }
         return true;
-    }
+}

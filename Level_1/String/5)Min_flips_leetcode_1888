@@ -110,7 +110,7 @@ Code-:
             if(i>=n)
             {
                 c1=c1-(s[i-n]!=s1[i-n]);
-                c2=c2-(s[i-n]!=s2[i-n]);
+                c2=c2-(s[i-n]!=s2[i-n]);  
             }
             
             //here we reach at n charcter 

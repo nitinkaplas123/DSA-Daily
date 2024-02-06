@@ -1,8 +1,7 @@
 Reference -:
 https://www.youtube.com/watch?v=M65xBewcqcI
 
-Note->For 3rd solution referernce Notebook 1 page -31
-
+Note->For 3rd solution referernce Notebook 1 page -31o
 Solution 1 -:   
 Steps-:
 1) Make a pair of vectors where we store the pair in i and j format which having value 0 (matrix[i][j]=0)

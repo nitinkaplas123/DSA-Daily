@@ -10,4 +10,4 @@ bool rotateString(string s, string goal) {
            s=ch+s;
         }
         return (s==goal);
-    }
+   }

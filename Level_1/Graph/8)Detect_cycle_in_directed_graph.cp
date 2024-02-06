@@ -8,38 +8,40 @@ Steps-:
   1st graph -> suppose there is no loop.
   so we make visited array same but rec[array]=false.
 
+0->1<-2   in undirected graph logic shows there is a cycle.
+but here in directed graph its not.
 
 Code-:
-bool dfs(vector<int>adj[],vector<int>&visited,int src,vector<int>&rec)
+bool dfs(vector<int>adj[],vector<int>&visited,int s,vector<int>&rec)
     {
-        visited[src]=true;
-        rec[src]=true;
+        visited[s]=true;
+        rec[s]=true;
         
-        for(auto x:adj[src])
+        for(auto x:adj[s])
         {
-            if(visited[x]==false and dfs(adj,visited,x,rec)==true)
-            return true;
+            if(visited[x]==false)
+            {
+                if(dfs(adj,visited,x,rec)==true)
+                return true;
+            }
             else if(rec[x]==true)
             return true;
             else
             continue;
-            
         }
-        rec[src]=false;
+        rec[s]=false;
         return false;
-        
-     }
+    }
     bool isCyclic(int V, vector<int> adj[]) {
-        vector<int>visited(V,false);
-        vector<int>rec(V,false);
-        for(int i=0;i<V;i++)
-        {
-            if(visited[i]==false)
-            {
-                if(dfs(adj,visited,i,rec)==true)
-                return true;
-            }
-        }
-        return false;
+       vector<int>visited(V,false);
+       vector<int>rec(V,false);
+       int prev=-1;
+       for(int i=0;i<V;i++)
+       {
+           if(visited[i]==false)
+           if(dfs(adj,visited,i,rec)==true)
+           return true;
+       }
+       return false;
     }
   

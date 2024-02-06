@@ -1,7 +1,7 @@
 C++ -:
 Code:
 char nonrepeatingCharacter(string S)
-    {
+{
        int count[26]={0};
        for(int i=0;i<S.length();i++)
        {
@@ -14,7 +14,10 @@ char nonrepeatingCharacter(string S)
            return S[i];
        }
        return '$';
-    }
+}
+
+
+
 
 
 Js Code-:

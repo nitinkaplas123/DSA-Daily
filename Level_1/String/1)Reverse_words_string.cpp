@@ -142,6 +142,35 @@ Time complexity - O(N)
 Space - O(1)
 
 
+Solution 4-:
 
+Steps-:
+1)Same approach as we do in stack just here we replaced stack.
+Code-:
+string reverseWords(string s) {
+        string str="";
+        string ans="";
+
+        for(int i=0;i<s.length();i++)
+        {
+            if(s[i]==' ' and str!="")
+            {
+               if(ans!="")
+               ans=str+' '+ans;
+               else
+               ans=str;
+               str="";
+            }
+            else if(s[i]!=' ')
+            str+=s[i];
+            else
+            continue;
+        }
+        if(str!="" and ans!="")
+        ans=str+' '+ans;
+        else if(str!="")
+        ans=str;
+        return ans;
+      }
 
 

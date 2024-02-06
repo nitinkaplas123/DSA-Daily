@@ -45,3 +45,21 @@ Code-: Time->O(K) where k is no. of set bits in a given number.
         return count;
     }
        
+
+
+Solution 3-:
+Steps-:
+1)Convert the given number into binary representation by dividing 2 and store remainder 
+  and count the set bit there.
+
+Code-: Time->O(log(n))
+int hammingWeight(uint32_t n) {
+       int count=0;
+       while(n!=0)
+       {
+           if(n%2!=0)
+           count++;
+           n=n/2;
+       }
+       return count;
+    }

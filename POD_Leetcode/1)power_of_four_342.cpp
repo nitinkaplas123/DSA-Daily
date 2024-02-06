@@ -61,7 +61,12 @@ Steps-:
   15-> 01111
   &->  00000
 
-3. Now second thing is (n-1)%3==0
+3. Now second thing is (n-1)%3==0    why this condition if we check for n=8 this is power of 2 but not 
+   power of 4 so thats why we have to check for (n-1%3==0)
+
+   n=8;
+   (n-1%3!=0) return false;
+
   eg. 
   1. n=64 -> (n-1)%3==0
                63%3==0
