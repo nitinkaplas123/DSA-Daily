@@ -4,7 +4,7 @@ Steps-:
 
 Code-: Time->O(N) Space->O(N)
 vector<long long int> twoOddNum(long long int Arr[], long long int N)  
-    {
+{
       unordered_map<int,int>m;
       for(int i=0;i<N;i++)
       {
@@ -21,7 +21,7 @@ vector<long long int> twoOddNum(long long int Arr[], long long int N)
       return v;
       else
       return {v[1],v[0]};
-    }
+}
 
 
 
