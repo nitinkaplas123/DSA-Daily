@@ -10,7 +10,7 @@ Steps-:
 Code-:
 vector<int> shortestPath(vector<vector<int>>& edges, int N,int M, int src){
         vector<int>ans(N,INT_MAX);
-       vector<int>adj[N];
+        vector<int>adj[N];
         for(int i=0;i<M;i++)
         {
             int u=edges[i][0];

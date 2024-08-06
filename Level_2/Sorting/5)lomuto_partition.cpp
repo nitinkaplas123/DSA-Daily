@@ -10,7 +10,7 @@ int helper(int arr[],int n,int p)
 {
     int val=arr[p];
     int i=-1;
-    for(int j=0;j<n;j++)
+    for(int j=0;j<n;j++)  
     {
         if(arr[j]<val)
         {

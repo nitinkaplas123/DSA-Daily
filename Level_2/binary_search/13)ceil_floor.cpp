@@ -41,5 +41,4 @@ pair<int, int> getFloorAndCeil(vector<int> &a, int n, int x) {
 		}
 	}
 	return {ans1,ans2};
-	
 }

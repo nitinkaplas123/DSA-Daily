@@ -94,5 +94,5 @@ int minIncrementForUnique(vector<int>& nums) {
           }
       }
       return ans;
-    }
+}
 

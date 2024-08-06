@@ -6,7 +6,7 @@ Steps-:
 
 Code-: Time->O(N) Space->O(N)
 void deleteMid(stack<int>&s, int sizeOfStack)
-    {
+{
         stack<int>st;
         for(int i=0;i<sizeOfStack/2;i++)
         {
@@ -20,7 +20,7 @@ void deleteMid(stack<int>&s, int sizeOfStack)
             s.push(st.top());
             st.pop();
         }
-    }
+}
 
 
 Solution 2-:

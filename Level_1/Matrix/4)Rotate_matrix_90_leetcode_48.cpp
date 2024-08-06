@@ -41,7 +41,7 @@ Steps-:
 Code-:
 
 void transpose(vector<vector<int>>&matrix)
-    {
+{
       int n=matrix.size();
       for(int i=0;i<n;i++)
       {
@@ -50,7 +50,7 @@ void transpose(vector<vector<int>>&matrix)
            swap(matrix[i][j],matrix[j][i]);
         }
      }
-    }
+}
     void rotate(vector<vector<int>>& matrix) {
         int n=matrix.size();
         //transpose

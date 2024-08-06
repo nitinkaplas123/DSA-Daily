@@ -19,3 +19,9 @@ Steps-:
      head=merge(head,head[i]);
   }
 3) Time -> O(N*K)
+
+
+
+Solution 3-:
+Steps-:
+

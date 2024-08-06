@@ -27,8 +27,6 @@ Code-: Time->O(M*N)  1st loop is -> M is the len of string 1 &
        return (ans.size()==0)?"-1":ans;
 
 
-
-
 Solution 2-:
 Steps-:
 
@@ -65,6 +63,8 @@ In the provided input where the string is too large to display, the code seems t
 Code-: 
 Time ->Overall, the time complexity of the longestCommonPrefix function is O(N * K + M), where N is the number of strings, 
        K is the average length of a string, and M is the length of the longest common prefix.
+
+
 class TrieNode
 {
     public:

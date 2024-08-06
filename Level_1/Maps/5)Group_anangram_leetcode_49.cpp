@@ -10,7 +10,8 @@ Steps-:
 
 
 Code-:
-vector<vector<string>> groupAnagrams(vector<string>& strs) {
+vector<vector<string>> groupAnagrams(vector<string>& strs) 
+{
         unordered_map<string,vector<string>>m;
         for(int i=0;i<strs.size();i++)
         {
@@ -26,7 +27,7 @@ vector<vector<string>> groupAnagrams(vector<string>& strs) {
             ans.push_back(x.second);
         }
         return ans;
-    }
+}
 
 
 Js Code-:

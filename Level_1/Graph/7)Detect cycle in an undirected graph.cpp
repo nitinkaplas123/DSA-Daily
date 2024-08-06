@@ -5,7 +5,6 @@ Steps-:
 3)if we get prev value!=x (which is (adjacency)value of src) and visited[x]==true 
   it means there is a cycle because x is repeating element.
 
-
 Code-: Time->O(V+E)
 bool dfs(vector<int>adj[],vector<int>&visited,int s,int &prev)
     {
